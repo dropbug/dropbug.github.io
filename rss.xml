@@ -9,7 +9,7 @@
     <channel>
         <title>天空中的小溪-王晓熙的个人博客</title>
         <link>xiaoxi.dev/</link>
-        <description>MemE is a powerful and highly customizable GoHugo theme for personal blogs.</description>
+        <description>王晓熙的个人博客,全栈,Node.js,Java,GO</description>
         <generator>Hugo 0.68.3 https://gohugo.io/</generator>
         
             <language>en</language>
@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 11 Jun 2020 15:26:03 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 11 Jun 2020 15:33:12 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="xiaoxi.dev/rss.xml" />
         
