@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">Hugo Theme MemE</title>
     <subtitle type="html">MemE is a powerful and highly customizable GoHugo theme for personal blogs.</subtitle>
-    <updated>2020-06-11T13:49:23&#43;08:00</updated>
+    <updated>2020-06-11T15:19:46&#43;08:00</updated>
     <id>https://example.com/</id>
     <link rel="alternate" type="text/html" href="https://example.com/" />
     <link rel="self" type="application/atom&#43;xml" href="https://example.com/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">使用Serverless 部署一个Egg.js应用</title>
             <link rel="alternate" type="text/html" href="https://example.com/posts/serverless-eggjs/" />
             <id>https://example.com/posts/serverless-eggjs/</id>
-            <updated>2020-06-11T13:45:38&#43;08:00</updated>
+            <updated>2020-06-11T14:08:44&#43;08:00</updated>
             <published>2020-06-11T09:58:02&#43;08:00</published>
             <author>
                     <name>reuixiy</name>
@@ -115,6 +115,197 @@
 &lt;p&gt;&lt;img src=&#34;https://example.com/resources/_gen/images/ServerLessTempDomain.png&#34; alt=&#34;发布成功截图&#34;&gt;&lt;/p&gt;
 &lt;p&gt;访问它就可以看到效果啦&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://example.com/resources/_gen/images/ServerLessQuerySkuPoolSize.jpg&#34; alt=&#34;访问函数查询结果&#34;&gt;&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Hugo&#43;Gitpage搭建个人博客</title>
+            <link rel="alternate" type="text/html" href="https://example.com/posts/blog-hugo-gitpage/" />
+            <id>https://example.com/posts/blog-hugo-gitpage/</id>
+            <updated>2020-06-11T15:19:05&#43;08:00</updated>
+            <published>2020-06-09T14:11:35&#43;08:00</published>
+            <author>
+                    <name>reuixiy</name>
+                    <uri>https://io-oi.me/</uri>
+                    <email>reuixiy@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">背景介绍 我们可能有各种各样的记录生活与工作的方式,这些记录散落在印象笔记,网易云笔记,手机记事本,石墨文档,CSDN,博客园等等.样式不一,问题不等(格式乱,有广告,界面不清爽,无法传播). 如果你也面临这样的问题,来试试免费的快速的个人博客吧.
+Gitpage是什么 Github提供的免费静态站点空间
+Hugo是什么 官方:
+ Hugo is the world’s fastest static website engine.
+ Hugo是一个静态站点生成工具,使用GO编写.从Markdown生成网页的速度非常快.
+安装Hugo很简单,略过.
+新建Hugo site 1  ~ $ hugo new site myBlog #myBlog是自定义的站点名称,你可以自己取   这一步会初始化一个空的Hugo站点,要写文章,在myBlog/content/posts下面新建一个MD文件就好了.推荐使用命令
+1  ~ $ hugo new &amp;#34;posts/hello-world.md&amp;#34;    hugo new 生成的MD文档头部有draft: true的标识,当为false时才会打包进静态文件.</summary>
+            
+                <content type="html">&lt;h3 id=&#34;背景介绍&#34;&gt;背景介绍&lt;/h3&gt;
+&lt;p&gt;我们可能有各种各样的记录生活与工作的方式,这些记录散落在印象笔记,网易云笔记,手机记事本,石墨文档,CSDN,博客园等等.样式不一,问题不等(格式乱,有广告,界面不清爽,无法传播).
+如果你也面临这样的问题,来试试免费的快速的个人博客吧.&lt;/p&gt;
+&lt;h3 id=&#34;gitpage是什么&#34;&gt;Gitpage是什么&lt;/h3&gt;
+&lt;p&gt;Github提供的免费静态站点空间&lt;/p&gt;
+&lt;h3 id=&#34;hugo是什么&#34;&gt;Hugo是什么&lt;/h3&gt;
+&lt;p&gt;官方:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hugo is the world’s fastest static website engine.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Hugo是一个静态站点生成工具,使用GO编写.从Markdown生成网页的速度非常快.&lt;/p&gt;
+&lt;p&gt;安装Hugo很简单,略过.&lt;/p&gt;
+&lt;h3 id=&#34;新建hugo-site&#34;&gt;新建Hugo site&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ hugo new site myBlog &lt;span class=&#34;c1&#34;&gt;#myBlog是自定义的站点名称,你可以自己取&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这一步会初始化一个空的Hugo站点,要写文章,在myBlog/content/posts下面新建一个MD文件就好了.推荐使用命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ hugo new &lt;span class=&#34;s2&#34;&gt;&amp;#34;posts/hello-world.md&amp;#34;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;hugo new 生成的MD文档头部有draft: true的标识,当为false时才会打包进静态文件.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;为了方便各个终端都可以写文章,我们把这个站点传到Github去.&lt;/p&gt;
+&lt;p&gt;先初始化,然后设置远程仓库&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ git init
+~ $ git remote add origin ***.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;配置gitignore
+先初始化,然后设置远程仓库&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ vi .gitignore
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;写入 &lt;code&gt;public&lt;/code&gt;,这个目录是Hugo生成的静态站点文件,仅用于部署,不适合放在这个仓库里,所以忽略掉.&lt;/p&gt;
+&lt;p&gt;提交更改,推送到远程仓库&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ git add .
+~ $ git commmit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;init&amp;#34;&lt;/span&gt;
+~ $ git push
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;启动站点&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ hugo server -D &lt;span class=&#34;c1&#34;&gt;#浏览器中打开 localhost:1313 就可以看到效果了.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;安装一个主题&#34;&gt;安装一个主题&lt;/h4&gt;
+&lt;p&gt;默认的样式比较简陋,可以安装&lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;主题&lt;/a&gt;来改变站点的风格.&lt;/p&gt;
+&lt;p&gt;meme是这个主题的名字,这一步从github下载了meme这个主题包到 themes/meme目录,并且将该目录设置为了Git子目录.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ git submodule add --depth &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; https://github.com/reuixiy/hugo-theme-meme.git themes/meme
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;复制主题的示例配置文件到根目录&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ rm config.toml &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; cp themes/meme/config-examples/en/config.toml config.toml
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;再打开看看效果吧&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ hugo server -D &lt;span class=&#34;c1&#34;&gt;#浏览器中打开 localhost:1313 就可以看到效果了.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;发布到gitpage&#34;&gt;发布到Gitpage&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;到Github新建一个仓库,名字叫 dropbug.github.io&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;dropbug&lt;/code&gt;是我在Github的名字,你应该替换为你的.仓库权限必须为public.&lt;/p&gt;
+&lt;p&gt;Hugo生成的静态站点文件都在/public目录下,我们只需要把这些文件传到 ***.github.io这个仓库即可.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;配置public目录与远程仓库的关联
+先清理public目录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ rm -r public &lt;span class=&#34;c1&#34;&gt;#删除目录&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;配置关联&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ git submodule add -f --depth &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; https://github.com/dropbug/dropbug.github.io.git public
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;https://github.com/dropbug/dropbug.github.io.git&lt;/code&gt;是我的静态博客站点的远程仓库地址,你应该替换为你的.&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;发布博客&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ hugo -t meme &lt;span class=&#34;c1&#34;&gt;#生成静态文件,meme是主题名.&lt;/span&gt;
+~ $ &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; public
+~ $ git add .
+~ $ git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;一次新发布&amp;#34;&lt;/span&gt;
+~ $ git push
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;打开 dropbug.github.io就可以看到博客啦.&lt;/p&gt;
+&lt;h3 id=&#34;配置自定义域名&#34;&gt;配置自定义域名&lt;/h3&gt;
+&lt;p&gt;参考&lt;a href=&#34;https://help.github.com/cn/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site&#34;&gt;官方&lt;/a&gt;&lt;/p&gt;
 </content>
             
             
