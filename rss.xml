@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>天空中的小溪-王晓熙的个人博客</title>
-        <link>xiaoxi.dev/</link>
+        <link>https://xiaoxi.dev/</link>
         <description>王晓熙的个人博客,全栈,Node.js,Java,GO</description>
         <generator>Hugo 0.68.3 https://gohugo.io/</generator>
         
@@ -23,15 +23,15 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 11 Jun 2020 15:33:12 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 11 Jun 2020 15:34:35 &#43;0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="xiaoxi.dev/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="https://xiaoxi.dev/rss.xml" />
         
         
             <item>
                 <title>使用Serverless 部署一个Egg.js应用</title>
-                <link>xiaoxi.dev/posts/serverless-eggjs/</link>
-                <guid isPermaLink="true">xiaoxi.dev/posts/serverless-eggjs/</guid>
+                <link>https://xiaoxi.dev/posts/serverless-eggjs/</link>
+                <guid isPermaLink="true">https://xiaoxi.dev/posts/serverless-eggjs/</guid>
                 <pubDate>Thu, 11 Jun 2020 09:58:02 &#43;0800</pubDate>
                 
                     <author>wangxxzhujy@gmail.com (王晓熙)</author>
@@ -98,7 +98,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;按照提示，依次配置 &lt;code&gt;Account ID&lt;/code&gt;、&lt;code&gt;Access Key Id&lt;/code&gt;、&lt;code&gt;Secret Access Key&lt;/code&gt;、 &lt;code&gt;Default Region Name&lt;/code&gt;
-&lt;code&gt;Account ID&lt;/code&gt;这个不是登录用户名,是阿里云分配的一串数字.&lt;a href=&#34;xiaoxi.dev/resources/_gen/images/aliAcountID.png&#34;&gt;id&lt;/a&gt;&lt;/p&gt;
+&lt;code&gt;Account ID&lt;/code&gt;这个不是登录用户名,是阿里云分配的一串数字.&lt;a href=&#34;https://xiaoxi.dev/resources/_gen/images/aliAcountID.png&#34;&gt;id&lt;/a&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;执行发布&lt;/li&gt;
 &lt;/ol&gt;
@@ -111,9 +111,9 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;选择默认的临时域名,发布成功后阿里云会分配一个临时域名&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;xiaoxi.dev/resources/_gen/images/ServerLessTempDomain.png&#34; alt=&#34;发布成功截图&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xiaoxi.dev/resources/_gen/images/ServerLessTempDomain.png&#34; alt=&#34;发布成功截图&#34;&gt;&lt;/p&gt;
 &lt;p&gt;访问它就可以看到效果啦&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;xiaoxi.dev/resources/_gen/images/ServerLessQuerySkuPoolSize.jpg&#34; alt=&#34;访问函数查询结果&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xiaoxi.dev/resources/_gen/images/ServerLessQuerySkuPoolSize.jpg&#34; alt=&#34;访问函数查询结果&#34;&gt;&lt;/p&gt;
 </description>
                 
                 
@@ -130,8 +130,8 @@
         
             <item>
                 <title>Hugo&#43;Gitpage搭建个人博客</title>
-                <link>xiaoxi.dev/posts/blog-hugo-gitpage/</link>
-                <guid isPermaLink="true">xiaoxi.dev/posts/blog-hugo-gitpage/</guid>
+                <link>https://xiaoxi.dev/posts/blog-hugo-gitpage/</link>
+                <guid isPermaLink="true">https://xiaoxi.dev/posts/blog-hugo-gitpage/</guid>
                 <pubDate>Tue, 09 Jun 2020 14:11:35 &#43;0800</pubDate>
                 
                     <author>wangxxzhujy@gmail.com (王晓熙)</author>

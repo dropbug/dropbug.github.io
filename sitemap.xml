@@ -3,36 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>xiaoxi.dev/posts/</loc>
+    <loc>https://xiaoxi.dev/posts/</loc>
     <lastmod>2020-06-11T15:19:05+08:00</lastmod>
   </url>
   
   <url>
-    <loc>xiaoxi.dev/posts/serverless-eggjs/</loc>
+    <loc>https://xiaoxi.dev/posts/serverless-eggjs/</loc>
     <lastmod>2020-06-11T14:08:44+08:00</lastmod>
   </url>
   
   <url>
-    <loc>xiaoxi.dev/</loc>
+    <loc>https://xiaoxi.dev/</loc>
     <lastmod>2020-06-11T15:19:05+08:00</lastmod>
   </url>
   
   <url>
-    <loc>xiaoxi.dev/about/</loc>
+    <loc>https://xiaoxi.dev/about/</loc>
     <lastmod>2020-06-11T14:08:39+08:00</lastmod>
   </url>
   
   <url>
-    <loc>xiaoxi.dev/posts/blog-hugo-gitpage/</loc>
+    <loc>https://xiaoxi.dev/posts/blog-hugo-gitpage/</loc>
     <lastmod>2020-06-11T15:19:05+08:00</lastmod>
   </url>
   
   <url>
-    <loc>xiaoxi.dev/categories/</loc>
+    <loc>https://xiaoxi.dev/categories/</loc>
   </url>
   
   <url>
-    <loc>xiaoxi.dev/tags/</loc>
+    <loc>https://xiaoxi.dev/tags/</loc>
   </url>
   
 </urlset>
