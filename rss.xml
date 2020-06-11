@@ -23,10 +23,110 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
         
-        <lastBuildDate>Thu, 11 Jun 2020 11:53:59 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 11 Jun 2020 13:49:23 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://example.com/rss.xml" />
         
+        
+            <item>
+                <title>使用Serverless 部署一个Egg.js应用</title>
+                <link>https://example.com/posts/serverless-eggjs/</link>
+                <guid isPermaLink="true">https://example.com/posts/serverless-eggjs/</guid>
+                <pubDate>Thu, 11 Jun 2020 09:58:02 &#43;0800</pubDate>
+                
+                    <author>reuixiy@gmail.com (reuixiy)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</copyright>
+                
+                    <description>&lt;h3 id=&#34;背景&#34;&gt;背景&lt;/h3&gt;
+&lt;p&gt;我刚入行的时候是2013年,做企业站.给客户部署时买一台美橙互联的VPS,上去装IIS,SqlServer,.Net Framework,配环境变量,改IIS配置参数,配置数据库账户,权限等等balabala一堆事,这还只是单机应用.OMG!要是配个运维帮我做这些事多好啊!&lt;/p&gt;
+&lt;p&gt;后来的Docker瞄准这个痛点,解决了环境不一致和重复性部署的问题.而现在的Serverless更彻底,直接隔离了IT基础设施这一环节,让开发者完全聚焦业务代码.&lt;/p&gt;
+&lt;h4 id=&#34;应用部署方式演进&#34;&gt;应用部署方式演进&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;物理单机-&amp;gt;虚拟化单机-&amp;gt;虚拟化分布式-&amp;gt;Docker-&amp;gt;Kubernetes-&amp;gt;Serverless&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;物理单机的时代持续了很多年,后来虚拟化流行起来之后部署方式演进的速度就大大加快了.比如国内Docker刚兴起没多久,k8s又来了,k8s还没玩转,Serverless又来了~扶我起来,我还能学!&lt;/p&gt;
+&lt;h3 id=&#34;什么是serverless&#34;&gt;什么是Serverless&lt;/h3&gt;
+&lt;h4 id=&#34;阿里云的解释&#34;&gt;阿里云的解释:&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;函数计算是事件驱动的全托管计算服务。使用函数计算，您无需采购与管理服务器等基础设施，只需编写并上传代码。函数计算为您准备好计算资源，弹性地、可靠地运行任务，并提供日志查询、性能监控和报警等功能.&lt;img src=&#34;https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/zh-CN/5723797851/p96487.png&#34; alt=&#34;函数计算工作流程&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;我的理解&#34;&gt;我的理解:&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Serverless是一种无需关心代码运行环境的应用部署方式.开发者只需要提供代码,云服务商来负责部署.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;为什么要用serverless&#34;&gt;为什么要用Serverless&lt;/h3&gt;
+&lt;p&gt;帮助开发者隔离与业务无关的事情,使开发者更加专注.&lt;/p&gt;
+&lt;p&gt;传统环境下开发者要关心生成环境的构建,更新,CPU/内存/磁盘/带宽的负载,日志的整理,这些与业务无关的事情分散了不少精力,特别是业务处于增长期的时候.&lt;/p&gt;
+&lt;p&gt;而Serverless帮开发者处理了所有这些琐碎的事情,且天生自带负载均衡,按需付费,很适合应对流量波峰波谷差异巨大的场景.&lt;/p&gt;
+&lt;h3 id=&#34;迁移eggjs上serverless&#34;&gt;迁移Egg.js上Serverless&lt;/h3&gt;
+&lt;p&gt;使用阿里云的Serverless服务,&lt;a href=&#34;https://help.aliyun.com/document_detail/52895.html?spm=a2c4g.11174283.6.541.20685212ZmkJdu&#34;&gt;&amp;ldquo;函数计算&amp;rdquo;&lt;/a&gt;
+有两种迁移方式,手动上传代码包 or 使用 &lt;a href=&#34;https://github.com/alibaba/funcraft/blob/master/docs/usage/getting_started-zh.md#&#34;&gt;funcraft&lt;/a&gt;自动发布.&lt;/p&gt;
+&lt;p&gt;推荐使用funcraft自动发布.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用npm安装funcraft&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ npm install @alicloud/fun -g
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;生成发布配置文件&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ fun deploy -y
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这一步会在根目录生成一个用于部署的配置文件 &lt;code&gt;template.yaml&lt;/code&gt;和应用启动的shell脚本 &lt;code&gt;bootstrap&lt;/code&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;配置发布目标参数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ fun config
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;按照提示，依次配置 &lt;code&gt;Account ID&lt;/code&gt;、&lt;code&gt;Access Key Id&lt;/code&gt;、&lt;code&gt;Secret Access Key&lt;/code&gt;、 &lt;code&gt;Default Region Name&lt;/code&gt;
+&lt;code&gt;Account ID&lt;/code&gt;这个不是登录用户名,是阿里云分配的一串数字.&lt;a href=&#34;https://example.com/resources/_gen/images/aliAcountID.png&#34;&gt;id&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;执行发布&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;~ $ fun deploy
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;选择默认的临时域名,发布成功后阿里云会分配一个临时域名&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/resources/_gen/images/ServerLessTempDomain.png&#34; alt=&#34;发布成功截图&#34;&gt;&lt;/p&gt;
+&lt;p&gt;访问它就可以看到效果啦&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://example.com/resources/_gen/images/ServerLessQuerySkuPoolSize.jpg&#34; alt=&#34;访问函数查询结果&#34;&gt;&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+            </item>
         
     </channel>
 </rss>
