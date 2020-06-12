@@ -3,36 +3,83 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://xiaoxi.dev/posts/</loc>
-    <lastmod>2020-06-11T18:27:59+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xiaoxi.dev/posts/serverless-eggjs/</loc>
-    <lastmod>2020-06-11T18:27:59+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xiaoxi.dev/</loc>
-    <lastmod>2020-06-11T18:27:59+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xiaoxi.dev/about/</loc>
-    <lastmod>2020-06-11T14:08:39+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://xiaoxi.dev/posts/blog-hugo-gitpage/</loc>
-    <lastmod>2020-06-11T15:19:05+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://xiaoxi.dev/categories/</loc>
+    <lastmod>2020-06-12T10:24:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/tags/egg.js/</loc>
+    <lastmod>2020-06-12T10:10:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/tags/node.js/</loc>
+    <lastmod>2020-06-12T10:10:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/posts/</loc>
+    <lastmod>2020-06-12T10:24:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/tags/serverless/</loc>
+    <lastmod>2020-06-12T10:10:18+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://xiaoxi.dev/tags/</loc>
+    <lastmod>2020-06-12T10:24:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/categories/web%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2020-06-12T10:10:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/posts/serverless-eggjs/</loc>
+    <lastmod>2020-06-12T10:10:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/</loc>
+    <lastmod>2020-06-12T10:24:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/about/</loc>
+    <lastmod>2020-06-12T09:59:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/tags/blog/</loc>
+    <lastmod>2020-06-12T10:24:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/categories/blog/</loc>
+    <lastmod>2020-06-12T10:24:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/tags/gitpage/</loc>
+    <lastmod>2020-06-12T10:24:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/tags/go/</loc>
+    <lastmod>2020-06-12T10:24:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/tags/hugo/</loc>
+    <lastmod>2020-06-12T10:24:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/posts/blog-hugo-gitpage/</loc>
+    <lastmod>2020-06-12T10:24:07+08:00</lastmod>
   </url>
   
 </urlset>
