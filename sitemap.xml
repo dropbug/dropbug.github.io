@@ -19,7 +19,7 @@
   
   <url>
     <loc>https://xiaoxi.dev/posts/</loc>
-    <lastmod>2020-06-12T10:55:43+08:00</lastmod>
+    <lastmod>2020-06-28T09:45:13+08:00</lastmod>
   </url>
   
   <url>
@@ -44,7 +44,7 @@
   
   <url>
     <loc>https://xiaoxi.dev/</loc>
-    <lastmod>2020-06-12T10:55:43+08:00</lastmod>
+    <lastmod>2020-06-28T09:45:13+08:00</lastmod>
   </url>
   
   <url>
@@ -80,6 +80,11 @@
   <url>
     <loc>https://xiaoxi.dev/posts/blog-hugo-gitpage/</loc>
     <lastmod>2020-06-12T10:55:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://xiaoxi.dev/posts/crmdemo/</loc>
+    <lastmod>2020-06-28T09:45:13+08:00</lastmod>
   </url>
   
 </urlset>

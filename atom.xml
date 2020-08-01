@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
     <title type="text">天空中的小溪-王晓熙的个人博客</title>
     <subtitle type="html">王晓熙的个人博客,全栈,Node.js,Java,GO</subtitle>
-    <updated>2020-06-12T10:56:03&#43;08:00</updated>
+    <updated>2020-08-01T15:13:46&#43;08:00</updated>
     <id>https://xiaoxi.dev/</id>
     <link rel="alternate" type="text/html" href="https://xiaoxi.dev/" />
     <link rel="self" type="application/atom&#43;xml" href="https://xiaoxi.dev/atom.xml" />
@@ -460,6 +460,95 @@ git push
                                 <category scheme="https://xiaoxi.dev/tags/blog/" term="Blog" label="Blog" />
                             
                         
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text"></title>
+            <link rel="alternate" type="text/html" href="https://xiaoxi.dev/posts/crmdemo/" />
+            <id>https://xiaoxi.dev/posts/crmdemo/</id>
+            <updated>2020-06-28T09:45:13&#43;08:00</updated>
+            <published>0001-01-01T00:00:00&#43;00:00</published>
+            <author>
+                    <name>王晓熙</name>
+                    <uri>https://xiaoxi.dev/</uri>
+                    <email>wangxxzhujy@gmail.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)</rights><summary type="html">从0设计一个CRM客服系统 项目介绍 跨境电商防关联客服系统,客服人员无需登录各个平台各个店铺,只要登录一个客服系统就可以回复所有邮件.
+项目规模 日活50万,QPS峰值10万.
+架构设计思考过程 业务本身并不复杂,一句话就就可以说清楚. 系统从平台拉邮件回来,展示给用户,用户回复后通过API提交给各个平台.
+业务流程图 抽象业务对象 这里忽略了公司,平台这些不是很核心的对象.
+ 用户 店铺 邮件 回复  服务拆分  ApiProxyServer-负责与电商平台的API交互. TaskServer-负责管理定时任务,生产消息. UserServer-接收客户端的请求.  数据库设计 先看数据量 日活50万,每个用户3个店铺,每个店铺平均2封邮件,一个月新产生的邮件数据:5032*30(天)=900万.一年之后仅邮件数据本身已经到一亿量级.为避免单表数据量过大,我们对邮件表按照月份进行分表,邮件在平台上的创建时间为分区键,取年份+月份做为表名.
+邮件一般都是要回复的,那回复表的数量至少与邮件表量级相等,只多不少.回复表也需要做分表.
+这个项目的场景中,日活用户就是付费了的客户,至少有一台云服务器在运行,非活跃用户我们不用考虑他们的负载.所以用户表和店铺表数据量都不大,一两百万的级别,不需要分表.
+MongoDB横向拓展方便,查询性能比Mysql高,自带副本集,我们选择它做存储.
+性能瓶颈预估 可能发生的性能瓶颈
+ 拉邮件是全店铺固定时间周期或少量用户手动触发,假设150万店铺,拉取频率是5分钟拉.这个写并发有可能是比较高的.也有可能很低,因为来邮件的时间是看客户的,可能比较分散.瓶颈预估:写并发1万. 查看邮件的高峰在每天刚开始上班的时间段最高,可能集中在8:30-10:30.其他时间应该比较平缓稳定.数据访问存在明显热点区域,近24小时未回复的热点较高,最后回复时间超过一周的几乎没有访问.瓶颈预估:读并发10万 回复邮件是客服人员一个个点开写回复的,速度较慢,并发比查询的峰值要低,我们假设是5万并发,好消息是用户对回复的实时反馈要求不高,点击回复按钮后是1秒提交到平台还是60秒提交到平台,对用户来说不是很关心.瓶颈预估:写并发5万  解决方案
+  TaskServer从MongoDB拉取全量店铺ID存储在本地文件(店铺数据更新不频繁,量也不大,放本地即可),定期读取文件,生成消息(Topic:PullEmail),通知各个ApiProxyServer拉取邮件. 各个ApiProxyServer从MachineShopMap拉取各自店铺ID,通过店铺拉取消息(Topic:PullEmail),通过API去各个电商平台拉邮件,接收到邮件后序列化(Json)插入到消息队列(Topic:ReadyEmail). TaskServer从消息队列(Topic:ReadyEmail)取出邮件,开N个线程(最多能开多少看DB的性能),并发插入.这里我们是5分钟一波,一波1万条.10000/3600=2.7条/s;所以这里N=3.压力不大.</summary>
+            
+                <content type="html">&lt;h1 id=&#34;从0设计一个crm客服系统&#34;&gt;从0设计一个CRM客服系统&lt;/h1&gt;
+&lt;h4 id=&#34;项目介绍&#34;&gt;项目介绍&lt;/h4&gt;
+&lt;p&gt;跨境电商防关联客服系统,客服人员无需登录各个平台各个店铺,只要登录一个客服系统就可以回复所有邮件.&lt;/p&gt;
+&lt;h4 id=&#34;项目规模&#34;&gt;项目规模&lt;/h4&gt;
+&lt;p&gt;日活50万,QPS峰值10万.&lt;/p&gt;
+&lt;h4 id=&#34;架构设计思考过程&#34;&gt;架构设计思考过程&lt;/h4&gt;
+&lt;p&gt;业务本身并不复杂,一句话就就可以说清楚.
+系统从平台拉邮件回来,展示给用户,用户回复后通过API提交给各个平台.&lt;/p&gt;
+&lt;h5 id=&#34;业务流程图&#34;&gt;业务流程图&lt;/h5&gt;
+&lt;h5 id=&#34;抽象业务对象&#34;&gt;抽象业务对象&lt;/h5&gt;
+&lt;p&gt;这里忽略了公司,平台这些不是很核心的对象.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;用户&lt;/li&gt;
+&lt;li&gt;店铺&lt;/li&gt;
+&lt;li&gt;邮件&lt;/li&gt;
+&lt;li&gt;回复&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;服务拆分&#34;&gt;服务拆分&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;ApiProxyServer-负责与电商平台的API交互.&lt;/li&gt;
+&lt;li&gt;TaskServer-负责管理定时任务,生产消息.&lt;/li&gt;
+&lt;li&gt;UserServer-接收客户端的请求.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h6 id=&#34;数据库设计&#34;&gt;数据库设计&lt;/h6&gt;
+&lt;p&gt;先看数据量
+日活50万,每个用户3个店铺,每个店铺平均2封邮件,一个月新产生的邮件数据:50&lt;em&gt;3&lt;/em&gt;2*30(天)=900万.一年之后仅邮件数据本身已经到一亿量级.为避免单表数据量过大,我们对邮件表按照月份进行分表,邮件在平台上的创建时间为分区键,取年份+月份做为表名.&lt;/p&gt;
+&lt;p&gt;邮件一般都是要回复的,那回复表的数量至少与邮件表量级相等,只多不少.回复表也需要做分表.&lt;/p&gt;
+&lt;p&gt;这个项目的场景中,日活用户就是付费了的客户,至少有一台云服务器在运行,非活跃用户我们不用考虑他们的负载.所以用户表和店铺表数据量都不大,一两百万的级别,不需要分表.&lt;/p&gt;
+&lt;p&gt;MongoDB横向拓展方便,查询性能比Mysql高,自带副本集,我们选择它做存储.&lt;/p&gt;
+&lt;h6 id=&#34;性能瓶颈预估&#34;&gt;性能瓶颈预估&lt;/h6&gt;
+&lt;p&gt;可能发生的性能瓶颈&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;拉邮件是全店铺固定时间周期或少量用户手动触发,假设150万店铺,拉取频率是5分钟拉.这个写并发有可能是比较高的.也有可能很低,因为来邮件的时间是看客户的,可能比较分散.瓶颈预估:写并发1万.&lt;/li&gt;
+&lt;li&gt;查看邮件的高峰在每天刚开始上班的时间段最高,可能集中在8:30-10:30.其他时间应该比较平缓稳定.数据访问存在明显热点区域,近24小时未回复的热点较高,最后回复时间超过一周的几乎没有访问.瓶颈预估:读并发10万&lt;/li&gt;
+&lt;li&gt;回复邮件是客服人员一个个点开写回复的,速度较慢,并发比查询的峰值要低,我们假设是5万并发,好消息是用户对回复的实时反馈要求不高,点击回复按钮后是1秒提交到平台还是60秒提交到平台,对用户来说不是很关心.瓶颈预估:写并发5万&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;解决方案&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;TaskServer从MongoDB拉取全量店铺ID存储在本地文件(店铺数据更新不频繁,量也不大,放本地即可),定期读取文件,生成消息(Topic:PullEmail),通知各个ApiProxyServer拉取邮件.
+各个ApiProxyServer从MachineShopMap拉取各自店铺ID,通过店铺拉取消息(Topic:PullEmail),通过API去各个电商平台拉邮件,接收到邮件后序列化(Json)插入到消息队列(Topic:ReadyEmail).
+TaskServer从消息队列(Topic:ReadyEmail)取出邮件,开N个线程(最多能开多少看DB的性能),并发插入.这里我们是5分钟一波,一波1万条.10000/3600=2.7条/s;所以这里N=3.压力不大.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;未回复的邮件全放到Redis.
+一封邮件有标题(100个字符),内容(600个字符),发件人(50个字符),产品ID(20个字符),创建时间(24个字符),794个字符,一天300万封邮件,峰值大约是2.2GB,邮件一旦被回复后就从Redis中剔出去,实际存储量比这个要小.
+这里还应该关注响应时间,用户等待时间不应该超过1秒.所以这里我们后端部署多个UserServer承接客户端请求,中间由Nginx做轮询式负载均衡,前端纯静态架在Nginx.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;各个UserServer接到请求后插入消息队列(Topic:SaveReply),TaskServer从消息队列(Topic:SaveReply)取出回复,开N个线程(最多能开多少看DB的性能),并发插入回复表.客户最多忍受&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
                     
                 
             
